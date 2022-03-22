@@ -8,8 +8,8 @@ import { Album } from './album';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const albums = [
-      { id: 11, name: 'Tell Your World' },
-      { id: 12, name: 'Boss' },
+      { id: 11, name: 'Dr Nice' },
+      { id: 12, name: 'Narco' },
       { id: 13, name: 'Bombasto' },
       { id: 14, name: 'Celeritas' },
       { id: 15, name: 'Magneta' },
@@ -22,10 +22,10 @@ export class InMemoryDataService implements InMemoryDbService {
     return {albums};
   }
 
-  // Overrides the genId method to ensure that an album always has an id.
-  // If the albums array is empty,
+  // Overrides the genId method to ensure that a album always has an id.
+  // If the album array is empty,
   // the method below returns the initial number (11).
-  // if the albums array is not empty, the method below returns the highest
+  // if the album array is not empty, the method below returns the highest
   // album id + 1.
   genId(albums: Album[]): number {
     return albums.length > 0 ? Math.max(...albums.map(album => album.id)) + 1 : 11;
