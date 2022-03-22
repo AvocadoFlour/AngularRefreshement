@@ -1,0 +1,13 @@
+<div *ngIf="album">
+    <h2> {{album.name | uppercase}} Details: </h2>
+    <div>id: {{album.id}}</div>
+    <div>
+        <label for="album-name">Album name: </label>
+        <input id="album-name" [(ngModel)]="album.name" placeholder="name">
+    </div>
+</div>
+
+<button type="button" (click)="goBack()">Go back</button>
+    
+<!-- label for i id, te famozni [(ngModel)] služe za aktivno uređivanje varijabli pojedine
+instance klase koja pruža podatke za prikaz. -->
